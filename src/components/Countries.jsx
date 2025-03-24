@@ -18,31 +18,31 @@ const Countries = () => {
   }, []);
   return (
     <div className="container mx-auto mt-14">
-      <ul className="grid grid-cols-1 gap-15 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+      <ul className="grid grid-cols-1 gap-15 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {countries.map((country) => {
           return (
             <li
               key={country.name}
-              className="bg-white rounded-md shadow overflow-hidden dark:bg-dark-blue"
+              className="bg-white  rounded-md shadow overflow-hidden dark:bg-dark-blue"
             >
               <img
-                src={country.flag}
+                src={country.flags.png}
                 alt="country"
                 loading="lazy"
-                className="w-full max-sm:h-[199px] max-lg:h-[210px] max:xl:h-[170px] max-2xl:h-[183px] cursor-pointer"
+                className="w-full md:h-full md:max-h-[212px] lg:max-h-[182px] xl:max-h-[208px] cursor-pointer"
               />
               <div className="px-5 py-7">
                 <h2 className="text-xl font-bold mb-4">{country.name}</h2>
                 <div className="flex gap-1 items-center">
-                  <span className="font-semibold text-sm ">Population:</span>
+                  <span className="font-bold text-sm ">Population:</span>
                   <span>{country.population}</span>
                 </div>
                 <div className="flex gap-1 items-center">
-                  <span className="font-semibold text-sm">Region:</span>
+                  <span className="font-bold text-sm">Region:</span>
                   <span>{country.region}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <span className="font-semibold text-sm">Capital:</span>
+                  <span className="font-bold text-sm">Capital:</span>
                   <span> {country.capital}</span>
                 </div>
               </div>
