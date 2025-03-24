@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -8,6 +9,9 @@
   --color-dark-gray: hsl(0, 0%, 52%); /* Light Mode Input */
   --color-very-light-gray: hsl(0, 0%, 98%); /* Light Mode Background */
   --color-white: #fff; /* Dark Mode Text & Light Mode Elements */
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
 }
 input::placeholder {
   @apply text-sm font-light;
