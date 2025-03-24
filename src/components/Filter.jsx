@@ -8,7 +8,7 @@ const Filter = () => {
   return (
     <div className="relative">
       <button
-        className="flex items-center justify-between w-60 py-4 pr-5 pl-7 bg-white shadow-sm rounded-md
+        className="flex items-center justify-between w-60 py-4 pr-5 pl-7 bg-white dark:bg-dark-blue shadow-sm rounded-md
         cursor-pointer"
         onClick={() => setShowOptions(!showOptions)}
       >

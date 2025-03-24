@@ -10,7 +10,7 @@ const Continents = ({ setContinent, setShowOptions }) => {
   ]);
 
   return (
-    <div className="absolute bg-white shadow-sm rounded-md w-60 mt-1 p-4 pl-7">
+    <div className="absolute bg-white dark:bg-dark-blue shadow-sm rounded-md w-60 mt-1 p-4 pl-7">
       {options.map((option, index) => {
         return (
           <div

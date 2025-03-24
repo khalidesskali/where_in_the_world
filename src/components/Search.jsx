@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div className="relative text-dark-gray">
+    <div className="relative text-dark-gray dark:text-white">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -20,7 +20,7 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search for a country..."
-        className="py-4 pl-16 focus:outline-none bg-white rounded-md w-full shadow-sm lg:w-[500px]"
+        className="py-4 pl-16 focus:outline-none bg-white dark:bg-dark-blue rounded-md w-full shadow-sm lg:w-[500px]"
       />
     </div>
   );

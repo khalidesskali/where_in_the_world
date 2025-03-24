@@ -9,3 +9,6 @@
   --color-very-light-gray: hsl(0, 0%, 98%); /* Light Mode Background */
   --color-white: #fff; /* Dark Mode Text & Light Mode Elements */
 }
+input::placeholder {
+  @apply text-sm font-light;
+}
