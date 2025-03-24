@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Countries = () => {
   const [countries, setContries] = useState([]);
+  const navigate = useNavigate();
 
   const getContries = async () => {
     try {
@@ -16,6 +18,7 @@ const Countries = () => {
   useEffect(() => {
     getContries();
   }, []);
+
   return (
     <div className="container mx-auto mt-14">
       <ul className="grid grid-cols-1 gap-15 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -29,13 +32,14 @@ const Countries = () => {
                 src={country.flags.png}
                 alt="country"
                 loading="lazy"
-                className="w-full md:h-full md:max-h-[212px] lg:max-h-[182px] xl:max-h-[208px] cursor-pointer"
+                className="w-full md:h-full md:max-h-[212px] lg:max-h-[182px] xl:max-h-[210px] cursor-pointer"
+                onClick={() => navigate(`/${country.name}`)}
               />
               <div className="px-5 py-7">
                 <h2 className="text-xl font-bold mb-4">{country.name}</h2>
                 <div className="flex gap-1 items-center">
                   <span className="font-bold text-sm ">Population:</span>
-                  <span>{country.population}</span>
+                  <span>{country.population.toLocaleString()}</span>
                 </div>
                 <div className="flex gap-1 items-center">
                   <span className="font-bold text-sm">Region:</span>
