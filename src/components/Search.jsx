@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = () => {
+const Search = ({ setSearchValue }) => {
   return (
     <div className="relative text-dark-gray dark:text-white">
       <svg
@@ -20,7 +20,9 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search for a country..."
-        className="py-4 pl-16 focus:outline-none bg-white dark:bg-dark-blue rounded-md w-full shadow-sm lg:w-[500px]"
+        className="py-4 pl-16 focus:outline-none bg-white
+        dark:bg-dark-blue rounded-md w-full shadow-sm lg:w-[500px]"
+        onChange={(e) => setSearchValue(e.target.value)}
       />
     </div>
   );

@@ -1,28 +1,12 @@
-import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Countries = () => {
-  const [countries, setContries] = useState([]);
+const Countries = ({ countries, filteredCountries }) => {
   const navigate = useNavigate();
-
-  const getContries = async () => {
-    try {
-      const res = await fetch("http://localhost:5173/data.json");
-      const data = await res.json();
-      setContries(data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  useEffect(() => {
-    getContries();
-  }, []);
 
   return (
     <div className="container mx-auto mt-14">
       <ul className="grid grid-cols-1 gap-15 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {countries.map((country) => {
+        {filteredCountries.map((country) => {
           return (
             <li
               key={country.name}

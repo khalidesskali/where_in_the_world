@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const [darkmode, setDarkmode] = useState(() => {
-    localStorage.getItem === "dark";
-  });
+  const [darkmode, setDarkmode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
   const navigate = useNavigate();
 
   useEffect(() => {

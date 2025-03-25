@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Continents = ({ setContinent, setShowOptions }) => {
   const [options, setOptions] = useState([
     "Africa",
-    "America",
+    "Americas",
     "Asia",
     "Europe",
     "Ocenia",

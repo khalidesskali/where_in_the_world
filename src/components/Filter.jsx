@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Continents from "./Continents";
 
-const Filter = () => {
+const Filter = ({ countries, setContries }) => {
   const [continent, setContinent] = useState("Filter by region");
   const [showOptions, setShowOptions] = useState(false);
+
+  // Filter countries by region
+  useEffect(() => {
+    if (continent !== "Filter by region") {
+      const filtredCountries = countries.filter(
+        (country) => country.region === continent
+      );
+      setContries(filtredCountries);
+    }
+  }, [continent]);
 
   return (
     <div className="relative">
       <button
-        className="flex items-center justify-between w-60 py-4 pr-5 pl-7 bg-white dark:bg-dark-blue shadow-sm rounded-md
+        className="flex items-center justify-between w-60 py-4 pr-5 pl-7 
+        bg-white dark:bg-dark-blue shadow-sm rounded-md
         cursor-pointer"
         onClick={() => setShowOptions(!showOptions)}
       >
