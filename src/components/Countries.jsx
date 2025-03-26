@@ -10,7 +10,7 @@ const Countries = ({ countries, filteredCountries }) => {
           return (
             <li
               key={country.name}
-              className="bg-white  rounded-md shadow overflow-hidden dark:bg-dark-blue"
+              className="bg-white h-[380px] rounded-md shadow overflow-hidden dark:bg-dark-blue"
             >
               <img
                 src={country.flags.png}
