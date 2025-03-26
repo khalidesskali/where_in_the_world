@@ -9,7 +9,7 @@ const Countries = ({ filteredCountries }) => {
         {filteredCountries.map((country) => {
           return (
             <li
-              key={country.name}
+              key={country.name.common}
               className="bg-white h-[430px] lg:h-[380px] rounded-md shadow overflow-hidden dark:bg-dark-blue"
             >
               <img
@@ -17,10 +17,12 @@ const Countries = ({ filteredCountries }) => {
                 alt="country"
                 loading="lazy"
                 className="w-full md:h-full md:max-h-[212px] lg:max-h-[182px] xl:max-h-[210px] cursor-pointer"
-                onClick={() => navigate(`/${country.name}`)}
+                onClick={() => navigate(`/${country.name.common}`)}
               />
               <div className="px-5 py-7">
-                <h2 className="text-xl font-bold mb-4">{country.name}</h2>
+                <h2 className="text-xl font-bold mb-4">
+                  {country.name.common}
+                </h2>
                 <div className="flex gap-1 items-center">
                   <span className="font-bold text-sm ">Population:</span>
                   <span>{country.population.toLocaleString()}</span>

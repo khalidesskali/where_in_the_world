@@ -9,7 +9,7 @@ const Home = () => {
 
   const getContries = async () => {
     try {
-      const res = await fetch("http://localhost:5173/data.json");
+      const res = await fetch("https://restcountries.com/v3.1/all");
       const data = await res.json();
       setContries(data);
     } catch (e) {
@@ -24,16 +24,16 @@ const Home = () => {
   // If there is a filter value add it to the
   const filteredCountries = countries.filter((country) =>
     filterValue
-      ? country.name.toLowerCase().startsWith(searchValue) &&
+      ? country.name.common.toLowerCase().startsWith(searchValue) &&
         country.region === filterValue
-      : country.name.toLowerCase().startsWith(searchValue)
+      : country.name.common.toLowerCase().startsWith(searchValue)
   );
 
   return (
     <div className="text-very-dark-blue dark:text-white dark:bg-very-darkmode-blue">
       <main
-        className="p-4 bg-very-light-gray dark:bg-very-darkmode-blue"
-        style={{ minHeight: "height: calc(100vh - 80px)" }}
+        className="main p-4 bg-very-light-gray dark:bg-very-darkmode-blue"
+        style={{ minHeight: "calc(100vh - 80px)" }}
       >
         <Inputs
           countries={countries}

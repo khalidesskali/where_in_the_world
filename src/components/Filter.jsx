@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Continents from "./Continents";
 
 const Filter = ({ filterValue, setFilterValue }) => {
   const [defaultValue, setDefaultValue] = useState("Filter by region");
   const [showOptions, setShowOptions] = useState(false);
-
-  // Filter countries by region
-  useEffect(() => {
-    console.log(filterValue);
-  }, [filterValue]);
 
   return (
     <div className="relative">
