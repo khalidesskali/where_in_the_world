@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-const Countries = ({ countries, filteredCountries }) => {
+const Countries = ({ filteredCountries }) => {
   const navigate = useNavigate();
 
   return (
     <div className="container mx-auto mt-14">
-      <ul className="grid grid-cols-1 gap-15 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <ul className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredCountries.map((country) => {
           return (
             <li
               key={country.name}
-              className="bg-white h-[380px] rounded-md shadow overflow-hidden dark:bg-dark-blue"
+              className="bg-white h-[430px] lg:h-[380px] rounded-md shadow overflow-hidden dark:bg-dark-blue"
             >
               <img
                 src={country.flags.png}
