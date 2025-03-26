@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Continents from "./Continents";
 
-const Filter = ({ countries, setContries }) => {
-  const [continent, setContinent] = useState("Filter by region");
+const Filter = ({ filterValue, setFilterValue }) => {
+  const [defaultValue, setDefaultValue] = useState("Filter by region");
   const [showOptions, setShowOptions] = useState(false);
 
   // Filter countries by region
   useEffect(() => {
-    if (continent !== "Filter by region") {
-      const filtredCountries = countries.filter(
-        (country) => country.region === continent
-      );
-      setContries(filtredCountries);
-    }
-  }, [continent]);
+    console.log(filterValue);
+  }, [filterValue]);
 
   return (
     <div className="relative">
@@ -23,7 +18,7 @@ const Filter = ({ countries, setContries }) => {
         cursor-pointer"
         onClick={() => setShowOptions(!showOptions)}
       >
-        <span>{continent}</span>
+        <span>{defaultValue}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -41,8 +36,9 @@ const Filter = ({ countries, setContries }) => {
       </button>
       {showOptions && (
         <Continents
-          setContinent={setContinent}
+          setFilterValue={setFilterValue}
           setShowOptions={setShowOptions}
+          setDefaultValue={setDefaultValue}
         />
       )}
     </div>

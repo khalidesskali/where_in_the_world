@@ -1,4 +1,3 @@
-import { p } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

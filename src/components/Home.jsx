@@ -5,6 +5,7 @@ import Countries from "./Countries";
 const Home = () => {
   const [countries, setContries] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [filterValue, setFilterValue] = useState("");
 
   const getContries = async () => {
     try {
@@ -20,8 +21,12 @@ const Home = () => {
     getContries();
   }, []);
 
+  // If there is a filter value add it to the
   const filteredCountries = countries.filter((country) =>
-    country.name.toLowerCase().startsWith(searchValue)
+    filterValue
+      ? country.name.toLowerCase().startsWith(searchValue) &&
+        country.region === filterValue
+      : country.name.toLowerCase().startsWith(searchValue)
   );
 
   return (
@@ -31,6 +36,8 @@ const Home = () => {
           countries={countries}
           setContries={setContries}
           setSearchValue={setSearchValue}
+          filterValue={filterValue}
+          setFilterValue={setFilterValue}
         />
         <Countries
           filteredCountries={filteredCountries}

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const Continents = ({ setContinent, setShowOptions }) => {
+const Continents = ({ setFilterValue, setShowOptions, setDefaultValue }) => {
   const [options, setOptions] = useState([
     "Africa",
     "Americas",
     "Asia",
     "Europe",
-    "Ocenia",
+    "Oceania",
   ]);
 
   return (
@@ -17,7 +17,8 @@ const Continents = ({ setContinent, setShowOptions }) => {
             className="cursor-pointer w-fit"
             key={index}
             onClick={() => {
-              setContinent(option);
+              setFilterValue(option);
+              setDefaultValue(option);
               setShowOptions(false);
             }}
           >
