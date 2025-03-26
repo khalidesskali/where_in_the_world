@@ -6,8 +6,9 @@ const Countries = ({ filteredCountries }) => {
   return (
     <div className="container mx-auto mt-14">
       <ul className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {filteredCountries.map((country) => {
-          return (
+        {filteredCountries
+          .filter((country) => country.name.common.toLowerCase() !== "israel") // Skip Israel
+          .map((country) => (
             <li
               key={country.name.common}
               className="bg-white lg:h-[380px] rounded-md shadow overflow-hidden dark:bg-dark-blue"
@@ -24,7 +25,7 @@ const Countries = ({ filteredCountries }) => {
                   {country.name.common}
                 </h2>
                 <div className="flex gap-1 items-center">
-                  <span className="font-bold text-sm ">Population:</span>
+                  <span className="font-bold text-sm">Population:</span>
                   <span>{country.population.toLocaleString()}</span>
                 </div>
                 <div className="flex gap-1 items-center">
@@ -33,12 +34,11 @@ const Countries = ({ filteredCountries }) => {
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="font-bold text-sm">Capital:</span>
-                  <span> {country.capital}</span>
+                  <span>{country.capital}</span>
                 </div>
               </div>
             </li>
-          );
-        })}
+          ))}
       </ul>
     </div>
   );
