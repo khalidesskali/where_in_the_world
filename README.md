@@ -31,14 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Project Screenshot](./screenshot.jpg)
-
-_Add a screenshot of your project here._
+![Project Screenshot](./src/assets/Screenshot%202025-03-26%20133735.png)
 
 ### Links
 
 - **Solution URL:** [Your Solution](https://your-solution-url.com)
-- **Live Site URL:** [Live Demo](https://your-live-site-url.com)
+- **Live Site URL:** [Live Demo](https://where-in-the-world-mv2h03vll-khalids-projects-ec6089f3.vercel.app/)
 
 ## My Process
 
