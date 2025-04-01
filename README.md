@@ -80,7 +80,3 @@ While working on this project, I learned:
 ## Acknowledgments
 
 Special thanks to **Frontend Mentor** for providing this challenge and helping developers improve their frontend skills. Thanks also to the community for sharing helpful solutions and insights!
-
----
-
-Feel free to edit and update this README file to match your project details!
